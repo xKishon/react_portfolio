@@ -42,7 +42,7 @@ const Design = () => {
                             quantity: 4,
                         },
                         repulse: {
-                            distance: 200,
+                            distance: 130,
                             duration: 0.4,
                         },
                     },

@@ -1,3 +1,5 @@
+/* ///////////////////////////////////////////////////////////////// General */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;400;500;600;700&display=swap');
 
 *{
@@ -41,18 +43,10 @@ h1{
 .bg_main{
     background-color: var(--c-main);
 }
+/* // Fine General */
 
-@keyframes arrow-bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+
+/* ///////////////////////////////////////////////////////////////// Landing Page */
   
 #container_landing{
     height: 100vh;
@@ -67,32 +61,51 @@ h1{
     z-index: -1;
 }
 
-#arrow_down_landing:hover{
-    color: var(--c-main)!important;
-}
-
 @keyframes arrow-bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
   }
-  
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow-scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
 #arrow_down_landing {
-    animation: arrow-bounce 1.5s ease-in-out infinite;
+  animation: arrow-bounce 1.5s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+
+#arrow_down_landing:hover {
+  color: var(--c-main) !important;
+  animation-name: arrow-scale;
+  animation-duration: 0.8;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 
+  
+
+/* // Fine Landing Page */
+
+
+/* ///////////////////////////////////////////////////////////////// Navbar */
 header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 80px;
 }
 
 nav a {
@@ -114,10 +127,9 @@ header .nav-btn {
 	color: var(--textColor);
 	visibility: hidden;
 	opacity: 0;
-	font-size: 1.8rem;
 }
 
-#pippo{
+#p_navpanel{
   display: none;
 }
 
@@ -133,7 +145,7 @@ nav {
 		opacity: 1;
 	}
 
-  #pippo{
+  #p_navpanel{
     display: contents;
   }
 	header nav {
@@ -165,5 +177,37 @@ nav {
 .nav-btn:hover{
   color: var(--c-main);
 }
-  
+
+
+nav a{
+  position: relative;
+}
+
+nav a::before{
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  background-color: var(--c-main);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+
+}
+
+nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.sticky-top{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+}
+
+/* // Fine Navbar */
 

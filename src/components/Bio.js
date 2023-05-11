@@ -6,6 +6,7 @@ const Bio = () => {
         <div className="row">
             <div className="col-12">
                 <p className="text-white min-vh-100">Prova</p>
+                <p className="text-white min-vh-100">Prova</p>
             </div>
         </div>
     </div>
