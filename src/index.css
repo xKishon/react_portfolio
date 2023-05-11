@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1{
+    font-size: 50px!important;
+}
+
+:root{
+    --c-main: #EA7317;
+    --c-dark: #151515;
+    --c-lighter: #2f2f2f;
+}
+
+.text_main{
+    color: var(--c-main);
+}
+
+.text_dark{
+    color: var(--c-dark)
+}
+
+.text_lighter{
+    color: var(--c-lighter);
+}
+
+.bg_main{
+    background-color: var(--c-orange);
+}
+
+.bg_dark{
+    background-color: var(--c-dark);
+}
+
+.bg_lighter{
+    background-color: var(--c-lighter);
+}
+
+.bg_main{
+    background-color: var(--c-main);
+}
+
+@keyframes arrow-bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+#container_landing{
+    height: 100vh;
+}
+
+#tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+#arrow_down_landing:hover{
+    color: var(--c-main)!important;
+}
+
+@keyframes arrow-bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+#arrow_down_landing {
+    animation: arrow-bounce 1.5s ease-in-out infinite;
+}
+
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+#pippo{
+  display: none;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 840px) {
+	header .nav-btn{
+		visibility: visible;
+		opacity: 1;
+	}
+
+  #pippo{
+    display: contents;
+  }
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 0.7s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+}
+
+.nav-btn:hover{
+  color: var(--c-main);
+}
+  
+
