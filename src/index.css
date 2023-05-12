@@ -13,7 +13,7 @@ h1{
 :root{
     --c-main: #EA7317;
     --c-dark: #151515;
-    --c-lighter: #2f2f2f;
+    --c-lighter: #272727;
 }
 
 .text_main{
@@ -66,7 +66,7 @@ h1{
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(15px);
   }
   100% {
     transform: translateY(0);
@@ -102,112 +102,29 @@ h1{
 
 
 /* ///////////////////////////////////////////////////////////////// Navbar */
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-nav a {
-	margin: 0 1rem;
-	color: var(--textColor);
-	text-decoration: none;
-}
-
-nav a:hover {
-	color: var(--secondaryColor);
-}
-
-header .nav-btn {
-	padding: 5px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	color: var(--textColor);
-	visibility: hidden;
-	opacity: 0;
-}
-
-#p_navpanel{
-  display: none;
-}
-
-header div,
-nav {
-	display: flex;
-	align-items: center;
-}
-
-@media only screen and (max-width: 840px) {
-	header .nav-btn{
-		visibility: visible;
-		opacity: 1;
-	}
-
-  #p_navpanel{
-    display: contents;
-  }
-	header nav {
-		position: fixed;
-		top: -100vh;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: var(--mainColor);
-		transition: 0.7s;
-	}
-
-	header .responsive_nav {
-		transform: translateY(100vh);
-	}
-
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-}
-
-.nav-btn:hover{
-  color: var(--c-main);
-}
-
-
-nav a{
+.nav-link-text {
   position: relative;
 }
 
-nav a::before{
+.nav-link-text::before {
   content: "";
   position: absolute;
-  bottom: 4px;
-  width: 100%;
-  left: 0px;
+  bottom: -3px;
+  width: 125%;
+  left: -5px;
   height: 2px;
   background-color: var(--c-main);
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-
+  transition: transform 0.2s ease-out;
 }
 
-nav a:hover::before {
+.nav-link-text:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.sticky-top{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
+.CiMenuBurger:hover{
+  border: none!important;
+  color: var(--c-main)!important;
 }
-
-/* // Fine Navbar */
-

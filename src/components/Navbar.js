@@ -1,43 +1,63 @@
 import React from 'react';
-import { FaTimes } from 'react-icons/fa';
-import { RiMenu3Line } from 'react-icons/ri';
-import '../index.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import About from '../screen/About';
+import Portfolio from '../screen/Portfolio';
+import Blog from '../screen/Blog';
+import Contacts from '../screen/Contacts';
+import {CiMenuBurger} from 'react-icons/ci'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../index.css'; 
 
-function Navbar(props) {
-  const showNavbar = () => {
-    props.onNavbarToggle();
-  };
-
+function CollapsibleExample() {
   return (
-    <header className="bg_dark text-white px-3 py-2">
-      <a href="http://google.it">
-        <img src="../logoprovapng.png" height="30" alt="logo" />
-      </a>
-      <nav className={`bg_dark ${props.isMenuOpen ? 'responsive_nav' : ''}`}>
-        <p className="text_main fs-3 fw-bold" id="p_navpanel">
-          Navigation Panel
-        </p>
-        <a href="/#" className="pb-1">
-          Home
-        </a>
-        <a href="/#" className="pb-1">
-          My work
-        </a>
-        <a href="/#" className="pb-1">
-          Blog
-        </a>
-        <a href="/#" className="pb-1">
-          About me
-        </a>
-        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
-        </button>
-      </nav>
-      <button className="nav-btn fs-3" onClick={props.onNavbarToggle}>
-        <RiMenu3Line />
-      </button>
-    </header>
+    <Router>
+      <Navbar collapseOnSelect expand="lg" className="justify-content-center bg_lighter p-2">
+        <Container>
+          <a href="http://google.it">
+            <img src="../logoprovapng.png" height="30" alt="logo" />
+          </a>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav">
+            <CiMenuBurger className="text-white CiMenuBurger fs-3" type="button"/> 
+          </Navbar.Toggle>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mx-auto text-center">
+              <Link to="/" className="text-decoration-none text-white mx-4 my-2 ">
+                <span className="nav-link-text">Home</span>
+              </Link>
+              <Link to="/about" className="text-decoration-none text-white mx-4 my-2">
+                <span className="nav-link-text">About</span>
+              </Link>
+              <Link to="/portfolio" className="text-decoration-none text-white mx-4 my-2">
+                <span className="nav-link-text">Portfolio</span>
+              </Link>
+              <Link to="/blog" className="text-decoration-none text-white mx-4 my-2">
+                <span className="nav-link-text">Blog</span>
+              </Link>
+              <Link to="/contacts" className="text-decoration-none text-white mx-4 my-2">
+                <span className="nav-link-text">Contacts</span>
+              </Link>
+            </Nav>
+
+            {/* Se metterò la dark/light mode */}
+            {/* <Nav>
+              <Nav.Link href="#deets" className="text-white"></Nav.Link>
+            </Nav> */}
+
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default Navbar;
+export default CollapsibleExample;
+
