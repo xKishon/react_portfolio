@@ -2,7 +2,13 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <div className="container-fluid bg_dark  pt-5">
+            <h1 className="text_main text-center">Blog</h1>
+        <div className="row">
+          <div className="col-12 col-md-6">
+          </div>
+        </div>
+      </div>
   )
 }
 

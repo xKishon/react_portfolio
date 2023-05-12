@@ -14,6 +14,7 @@ h1{
     --c-main: #EA7317;
     --c-dark: #151515;
     --c-lighter: #272727;
+    --c-lighter2: #abaaaa;
 }
 
 .text_main{
@@ -26,6 +27,9 @@ h1{
 
 .text_lighter{
     color: var(--c-lighter);
+}
+.text_lighter2{
+  color: var(--c-lighter2)!important;
 }
 
 .bg_main{
@@ -127,4 +131,32 @@ h1{
 .CiMenuBurger:hover{
   border: none!important;
   color: var(--c-main)!important;
+}
+
+.social_icon:hover{
+ color: white!important;
+ scale: 130%;
+ 
+}
+
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* //////////////////////////////////////////////////////////// Exagon */
+.hexagon {
+  width: 130px;
+  height: 130px;
+  background-color: var(--c-main);
+  position: relative;
+  clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
+  border-radius: 10px;
+}
+
+.hexagon_icon_size{
+  font-size: 60px;
 }
