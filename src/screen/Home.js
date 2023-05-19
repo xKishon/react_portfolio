@@ -1,10 +1,10 @@
 import { BsArrowDownSquareFill } from 'react-icons/bs';
-import {MdRocketLaunch} from 'react-icons/md'
 import {FaLinkedin, FaGithub, FaInstagram} from 'react-icons/fa'
 import {SiCodewars} from 'react-icons/si'
-const Home = ({ scrollToNavbar }) => {
+import { Typewriter } from 'react-simple-typewriter'
 
 
+const Home = ({scrollToAbout}) => {
   return (
     <>
       <div className="container-fluid" id="container_Home">
@@ -25,14 +25,27 @@ const Home = ({ scrollToNavbar }) => {
         <div className="row vh-100">
           <div className="col-12 d-flex justify-content-center align-items-center flex-column">
             <h1 className="text-white display text-center">
-              Hello i'm <span className="text_main" id="name_landing">Davide Lobascio</span>.
+              Hello i'm <span className="text_main text_shadow" id="name_landing">Davide Lobascio</span>.
             </h1>
-            <h3 className="text-white text-center">I'm a Full-Stack web developer <MdRocketLaunch className=""/></h3>
+            <h3 className="text-white text-center ">I'm a {" "}
+            <span className="bg_lighter px-2 rounded-start rounded-end">
+            <Typewriter
+            words={['Full Stack Developer', 'Gamer', 'CLC Lover']}
+            loop={0}
+            cursor
+            cursorStyle='_'
+            typeSpeed={150}
+            deleteSpeed={70}
+            delaySpeed={1000}
+          />
+
+            </span>
+            </h3>
             <BsArrowDownSquareFill
               className="fs-1 text-white mt-4"
               id="arrow_down_landing"
               type="button"
-              onClick={scrollToNavbar}
+              onClick={scrollToAbout}
             />
           </div>
         </div>

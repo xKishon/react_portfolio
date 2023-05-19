@@ -43,6 +43,9 @@ h1{
 .bg_lighter{
     background-color: var(--c-lighter);
 }
+.bg_lighter2{
+  background-color: var(--c-lighter2);
+}
 
 .bg_main{
     background-color: var(--c-main);
@@ -109,6 +112,9 @@ h1{
 .nav-link-text {
   position: relative;
 }
+.nav-link-text:hover {
+  color: var(--c-main);
+}
 
 .nav-link-text::before {
   content: "";
@@ -146,17 +152,53 @@ h1{
   width: 100%;
   z-index: 999;
 }
+.collapse_border{
+  border-bottom: #EA7317 1px solid;
+}
 
 /* //////////////////////////////////////////////////////////// Exagon */
 .hexagon {
+  position: relative;
   width: 130px;
   height: 130px;
   background-color: var(--c-main);
-  position: relative;
   clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
-  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
+
+.hexagon:hover {
+  transform: translateX(5px);
+  animation: shake 0.2s ease-in-out 2 alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
 
 .hexagon_icon_size{
   font-size: 60px;
+}
+
+.container_logos{
+  max-width: 100%;
+}
+
+.h1_border_bottom {
+  position: relative;
+}
+
+.h1_border_bottom::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 10%;
+  left: 45%;
+  height: 3px;
+  background-color: var(--c-lighter2);
 }

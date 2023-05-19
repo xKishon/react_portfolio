@@ -11,17 +11,18 @@ import Blog from './screen/Blog';
 import Contacts from './screen/Contacts';
 
 function App() {
-  const navbarRef = useRef(null);
   const aboutRef = useRef(null);
+  const homeRef = useRef(null);
   
-  const scrollToNavbar = () => {
-    if (navbarRef && navbarRef.current) {
-      navbarRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  
   const scrollToAbout = () => {
     if (aboutRef && aboutRef.current) {
       aboutRef.current.scrollIntoView({behaviour: 'smooth', block: 'start'});
+    }
+  };
+  const scrollToHome = () => {
+    if (homeRef && homeRef.current) {
+      homeRef.current.scrollIntoView({behaviour: 'smooth', block: 'start'});
     }
   };
 
@@ -29,9 +30,11 @@ function App() {
   return (
     <Router>
         <Design />
-        <Home scrollToNavbar={scrollToNavbar}/>
-        <div ref={navbarRef} className="sticky-top">
-          <Navbar scrollToAbout={scrollToAbout}/>
+        <div ref={homeRef}>
+          <Home scrollToAbout={scrollToAbout}/>
+        </div>
+        <div className="sticky-top">
+          <Navbar scrollToAbout={scrollToAbout} scrollToHome={scrollToHome}/>
         </div>
         <div ref={aboutRef}>
           <About />
