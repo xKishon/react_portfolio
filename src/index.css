@@ -14,7 +14,7 @@ h1{
     --c-main: #EA7317;
     --c-dark: #151515;
     --c-lighter: #272727;
-    --c-lighter2: #abaaaa;
+    --c-lighter2: #e4e4e4;
 }
 
 .text_main{
@@ -202,3 +202,61 @@ h1{
   height: 3px;
   background-color: var(--c-lighter2);
 }
+
+.h1_shadow{
+  text-shadow: 1px 1px 2px white;
+}
+
+.projects_button:hover{
+  background-color: var(--c-main)!important;
+}
+
+
+
+
+
+
+.card_project {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.card_project:hover {
+  transform: scale(1.1);
+  transition: 800ms ease-in-out;
+  border: 5px solid rgba(0, 0, 0, 0.8); /* Utilizza rgba() per specificare un colore con opacità */
+}
+
+
+.project_body {
+  /* opacity: 0; */
+  transform: translateX(-100%);
+  transition: opacity 800ms ease-in-out, transform 800ms ease-in-out;
+}
+
+.card_project:hover .project_body {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.card_project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.757) 100%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+
+}
+
+.card_project:hover::before {
+  opacity: 1;
+}
+
+
